@@ -1,20 +1,6 @@
-@use '~@angular/material' as mat;
-
-// Custom material theming
-$heading-font-family: "'Oswlad', sans-serif";
-$custom-typography: mat.define-typography-config(
-  $display-4: mat.define-typography-level(112px, $font-family: $heading-font-family),
-  $display-3: mat.define-typography-level(56px, $font-family: $heading-font-family),
-  $display-2: mat.define-typography-level(45px, $font-family: $heading-font-family),
-  $display-1: mat.define-typography-level(34px, $font-family: $heading-font-family),
-  $headline: mat.define-typography-level(24px, $font-family: $heading-font-family),
-  $title: mat.define-typography-level(20px, $font-family: $heading-font-family),
-);
-
-@include mat.core($custom-typography);
-
-// Incluimos los estilos comunes de Angular Material
+// Custom palette for material custom theme
 /* @include mat.core(); */
+@use '~@angular/material' as mat;
 
 $custom-primary-map: (
   50 : #fffaf0,
@@ -84,18 +70,3 @@ $custom-accent-map: (
 
 $primary-palette: mat.define-palette($custom-primary-map);
 $accent-palette: mat.define-palette($custom-accent-map);
-
-
-$custom-theme: mat.define-light-theme((
-  color: (
-    primary: $primary-palette,
-    accent: $accent-palette,
-  )
-));
-
-@include mat.all-component-themes($custom-theme);
-
-
-// Global styles
-html, body { height: 100%; }
-body { margin: 0; font-family: "Roboto", "Helvetica Neue", sans-serif; }

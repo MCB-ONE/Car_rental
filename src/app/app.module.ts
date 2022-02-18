@@ -1,16 +1,35 @@
 import { NgModule } from '@angular/core';
+// Firebase imports
+import { AngularFireModule} from '@angular/fire/compat';
+import { AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule} from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './angular-material.module';
 import { AppRoutingModule } from './app-routing.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './components/forms/login/login.component';
+import { RegisterComponent } from './components/forms/register/register.component';
+import { environment } from 'environments/environment';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AngularFireModule.initializeApp(environment.firebase.config),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    AngularMaterialModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
