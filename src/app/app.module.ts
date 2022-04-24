@@ -13,12 +13,20 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/forms/login/login.component';
 import { RegisterComponent } from './components/forms/register/register.component';
 import { environment } from 'environments/environment';
+import { HomeComponent } from './components/home/home.component';
+import { SkeletonComponent } from './layout/skeleton/skeleton.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { NavigationComponent } from './layout/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent,
+    SkeletonComponent,
+    FooterComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
