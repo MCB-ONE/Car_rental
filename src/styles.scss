@@ -1,5 +1,8 @@
-@use '~@angular/material' as mat;
-@use './assets/styles/theme.scss' as theme;
+@use "@angular/material" as mat;
+@use "./assets/styles/theme.scss" as theme;
+@import "variables";
+@import "../node_modules/font-awesome/scss/font-awesome";
+
 // Custom material theming
 $heading-font-family: "'Oswlad', sans-serif";
 $custom-typography: mat.define-typography-config(
@@ -15,16 +18,65 @@ $custom-typography: mat.define-typography-config(
 
 // Setting custom palette
 
-$custom-theme: mat.define-light-theme((
-  color: (
-    primary: theme.$primary-palette,
-    accent: theme.$accent-palette,
+$custom-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: theme.$primary-palette,
+      accent: theme.$accent-palette,
+    ),
   )
-));
+);
 
 @include mat.all-component-themes($custom-theme);
 
-
 // Global styles
-html, body { height: 100%; }
-body { margin: 0; font-family: "Roboto", "Helvetica Neue", sans-serif; }
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* Material buttons */
+.mat-button.mat-primary{
+  background-color: $yellow;
+  color: $black;
+}
+
+
+/* Material icons */
+.material-icons.color_yellow {
+  color: $yellow;
+}
+.material-icons.color_white {
+  color: $white;
+}
+.material-icons.color_black {
+  color: $black;
+}
+.material-icons.color_grey {
+  color: $grey;
+}
+
+/* Titulos */
+.hero-tittle {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.section-tittle {
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: $yellow;
+}
+
+/* Color texto */
+.yellow-text{
+  color: $yellow;
+}
+

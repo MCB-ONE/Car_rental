@@ -1,6 +1,6 @@
 // Custom palette for material custom theme
 /* @include mat.core(); */
-@use '~@angular/material' as mat;
+@use '@angular/material' as mat;
 
 $custom-primary-map: (
   50 : #fffaf0,

@@ -1,0 +1,21 @@
+
+@import 'variables';
+
+.hero-section {
+  height: 70vh;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  padding: 0 10%;
+  display: flex;
+  flex-flow: column;
+  justify-content: end;
+  color: $white;
+
+  .hero-tittle{
+    margin-bottom: 5px;
+  }
+  .hero-subittle{
+    font-size: 20px;
+    margin-top: 0px;
+  }
+}

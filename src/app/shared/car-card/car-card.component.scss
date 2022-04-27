@@ -1,0 +1,88 @@
+@import "variables";
+
+.car-card {
+  max-width: 320px;
+  margin-bottom: 1rem;
+  padding: 16px 0px 0px 0px;
+  .mat-card-header {
+    display: block;
+    padding: 0px 32px;
+    .mat-card-image {
+      width: calc(80% + 32px);
+      margin: 0 auto;
+      display: block;
+      overflow: hidden;
+    }
+  }
+  .mat-card-content {
+    padding: 16px;
+    margin-bottom: 0px;
+  }
+  .mat-card-title {
+    font-size: 28px;
+    font-weight: 700;
+  }
+  .mat-card-subtitle {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .car-card__features {
+    display: flex;
+    flex-flow: wrap;
+
+    .feature-item {
+      flex: 0 0 50%;
+      max-width: 50%;
+      display: flex;
+      align-items: center;
+      img {
+        width: 24px;
+        padding-top: 0px;
+        margin-right: 10px;
+      }
+      p {
+        display: inline-block;
+      }
+    }
+  }
+  .mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+    width: 100%;
+    .price {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      font-size: 12px;
+      padding-left: 20px;
+      border-left: 2px solid $yellow;
+      margin-left: -2px;
+      padding-top: 3px;
+      padding-bottom: 7px;
+      min-height: 52px;
+      p {
+        margin-bottom: 5px;
+        margin-top: 0;
+      }
+      span {
+        display: block;
+        line-height: 20px;
+        font-family: "Oswald", sans-serif;
+        font-size: 24px;
+      }
+    }
+    .action {
+      font-weight: 600;
+      background-color: $yellow;
+      text-transform: uppercase;
+      padding: 0px 16px;
+      display: flex;
+      align-items: center;
+      &:hover {
+        background-color: $light-grey;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "variables";
+
+.news-letter {
+  position: relative;
+  bottom: -5px;
+  padding:  25px 30px 30px 30px ;
+  border-bottom: 4px solid $yellow;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px 5px 0px 0px;
+  p {
+    font-size: 20px;
+  }
+  .news-letter__form{
+    input{
+      padding: 8px;
+      border-radius: 4px;
+    }
+  }
+}

@@ -1,1 +1,38 @@
-<p>navigation works!</p>
+<mat-toolbar>
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon color="primary">menu</mat-icon>
+    </button>
+  </div>
+  <div class="nav-logo">
+    <img src="/assets/images/logo.png" alt="Logo">
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="30px" class="navigation-items">
+      <li>
+        <a routerLink="/flota">Flota</a>
+      </li>
+      <li>
+        <a routerLink="/contacto">Contacto</a>
+      </li>
+      <li>
+        <a routerLink="/contacto">Login</a>
+      </li>
+      <li class="social">
+        <a routerLink="/flota">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="social">
+        <a routerLink="/flota">
+          <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="social">
+        <a routerLink="/flota">
+          <i class="fa fa-twitter-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>

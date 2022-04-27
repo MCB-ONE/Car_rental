@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,16 +10,11 @@ import { AngularFirestore } from '@angular/fire/compat/firestore'
 export class AppComponent {
   title = 'car_rental';
 
-  constructor(private fs: AngularFirestore){
+  constructor() {
 
   }
 
-  ngOnInit(){
-    this.fs.collection('test').snapshotChanges().subscribe((personas) => {
-      personas.map((p) => {
-        console.log(p.payload.doc.data());
-      })
-    })
+  ngOnInit() {
   }
 
 }

@@ -4,12 +4,33 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
+      "@src/*": [
+        "../src/*"
+      ],
       "@app/*": [
         "app/*"
       ],
-      "@src/*":[
-        "../src/*"
+      "@core/*": [
+        "app/core/*"
       ],
+      "@shared/*": [
+        "app/shared/*"
+      ],
+      "@components/*": [
+        "app/shared/components/*"
+      ],
+      "@env/*": [
+        "environment/*"
+      ],
+      "@modules/*": [
+        "app/modules/*"
+      ],
+      "@data/*": [
+        "app/data/*"
+      ],
+      "@layout/*": [
+        "app/layout/*"
+      ]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
