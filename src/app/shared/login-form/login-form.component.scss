@@ -1,0 +1,61 @@
+@import "variables";
+
+p {
+  margin: 16px 0;
+}
+
+.full-with__form {
+  width: 100%;
+  .full-with__input {
+    width: 100%;
+  }
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: rgb(47 47 47 / 64%);
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  border-bottom: 1px solid $white;
+}
+
+.text-link {
+  padding-bottom: 5px;
+  border-bottom: 1px solid $grey;
+  &:hover {
+    color: $yellow;
+    text-decoration: none;
+    border-bottom: 1px solid $yellow;
+  }
+}
+
+button {
+  padding: 5px 15px;
+  .mat-button-base i {
+    vertical-align: -2px;
+  }
+  i {
+    &::before {
+      font-size: 20px;
+    }
+  }
+}
+
+.text-separator {
+  margin: 16px 0;
+  &::before,
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 0.09em;
+    min-width: 3rem;
+    margin-bottom: 4px;
+    background: #707070;
+  }
+  &::before {
+    margin-right: 8px;
+  }
+
+  &::after {
+    margin-left: 8px;
+  }
+}

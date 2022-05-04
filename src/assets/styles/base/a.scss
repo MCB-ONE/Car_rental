@@ -1,0 +1,18 @@
+@import 'variables';
+
+.app-a{
+  color: $yellow;
+  margin-right: 16px;
+  cursor: pointer;
+  transform: 0.25;
+  &:hover{
+    color: $grey;
+    text-decoration: none;
+  }
+
+  &_active{
+    color: $grey;
+    text-decoration: none;
+  }
+
+}

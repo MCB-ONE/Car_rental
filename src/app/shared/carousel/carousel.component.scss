@@ -1,0 +1,8 @@
+@import "variables";
+owl-carousel-o {
+  .owl-theme {
+    &:hover {
+      background: $yellow !important;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@import 'variables';
+
+/* Material buttons */
+.mat-flat-button, .mat-stroked-button{
+  i {
+    margin-right: 8px;
+    vertical-align: -1px !important;
+  }
+}
+
+/* Flat buttons*/
+.mat-flat-button.mat-primary {
+  background-color: $yellow;
+  color: $dark-grey!important;
+  transition: 0.5;
+  &:hover, &:focus{
+    color: $dark-grey !important;
+    border: 1px solid $dark-grey !important;
+    background-color: transparent !important;
+  }
+}
+
+.mat-flat-button.mat-accent {
+  background-color: $dark-grey;
+  color: $yellow !important;
+  transition: 0.5;
+  &:hover, &:focus{
+    color: $yellow !important;
+    border: 1px solid $yellow !important;
+    background-color: transparent !important;
+  }
+}
+
+.mat-button__full {
+  button{
+    width: 100%;
+  }
+}
+
+/* Stroked buttons*/
+.mat-stroked-button.mat-primary {
+  border-color: $yellow !important;
+  color: $yellow !important;
+  box-shadow: inset 0px 0px 0px $yellow !important;;
+  transition: all 0.5s !important;
+  &:hover, &:focus{
+    color: $dark-grey !important;
+    box-shadow: inset 10rem 0px 0px $yellow !important;
+  }
+}
+
+.mat-stroked-button.mat-accent {
+  border-color: $dark-grey !important;
+  color: $dark-grey !important;
+  box-shadow: inset 0px 0px 0px $dark-grey !important;;
+  transition: all 0.5s !important;
+  &:hover, &:focus{
+    color: $smoke-white !important;
+    box-shadow: inset 10rem 0px 0px $dark-grey !important;
+  }
+}
+
+.mat-button__full {
+  .mat-stroked-button.mat-primary{
+    &:hover, &:focus{
+      color: $dark-grey !important;
+      box-shadow: inset 38rem 0px 0px $yellow !important;
+    }
+  }
+  .mat-stroked-button.mat-accent{
+    &:hover, &:focus{
+      color: $smoke-white !important;
+      box-shadow: inset 38rem 0px 0px $dark-grey !important;
+    }
+  }
+}

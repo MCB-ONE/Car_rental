@@ -1,0 +1,33 @@
+@import "variables";
+
+/* Main styles */
+.text-uppercase{
+  text-transform: uppercase;
+}
+.text-center {
+  text-align: center;
+}
+.text-grey{
+  color: $grey;
+}
+
+.text-yellow{
+  color: $yellow;
+}
+
+/* Tittles $ subtittles*/
+
+.hero-tittle {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.section-tittle {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: $yellow;
+}
+.section-subtittle {
+  margin-top: 0;
+  margin-bottom: 40px;
+}

@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar [ngClass]="url1 === '/demo' ? 'dark' : 'transparent'">
   <div fxHide.gt-xs>
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon color="primary">menu</mat-icon>
@@ -8,15 +8,18 @@
     <img src="/assets/images/logo.png" alt="Logo">
   </div>
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-    <ul fxLayout fxLayoutGap="30px" class="navigation-items">
+    <ul fxLayout fxLayoutAlign="space-around center"  fxLayoutGap="30px" class="navigation-items">
       <li>
-        <a routerLink="/flota">Flota</a>
+        <a routerLink="/home" routerLinkActive="active">Inicio</a>
       </li>
       <li>
-        <a routerLink="/contacto">Contacto</a>
+        <a routerLink="/flota" routerLinkActive="active">Flota</a>
       </li>
       <li>
-        <a routerLink="/contacto">Login</a>
+        <a routerLink="/contacto" routerLinkActive="active">Contacto</a>
+      </li>
+      <li>
+        <a routerLink="/login" ><button mat-stroked-button color="primary" class="nav-button"><i class="fa fa-sign-in" aria-hidden="true"></i>Acceder</button></a>
       </li>
       <li class="social">
         <a routerLink="/flota">

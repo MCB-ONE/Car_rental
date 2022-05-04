@@ -1,0 +1,12 @@
+@import "variables";
+
+.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+  box-shadow: none;
+}
+
+mat-expansion-panel-header {
+  margin-bottom: 8px;
+}
+mat-expansion-panel-header {
+  border-left: 4px solid $yellow;
+}
