@@ -1,0 +1,35 @@
+@import "variables";
+
+.select {
+  border: 1px solid #c2c2c2;
+  padding: 4px 4px 4px 8px;
+  border-radius: 8px;
+  margin-top: 8px;
+  &:focus, &:active{
+    border: 2px solid $yellow;
+  }
+}
+
+.select.dark {
+  /* to change arrow when focused */
+  .mat-select {
+    .mat-select-arrow {
+      color: $light-grey;
+    }
+    .mat-select-panel-wrap{
+      .mat-select-panel{
+        background: $grey;
+      }
+    }
+    .mat-select-value-text{
+      padding-left: 8px;
+      color: $light-grey;
+    }
+  }
+}
+
+.error-form{
+  .select {
+    border: 2px solid $red;
+  }
+}

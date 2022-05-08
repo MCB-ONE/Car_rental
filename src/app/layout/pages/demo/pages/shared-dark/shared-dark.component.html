@@ -1,0 +1,67 @@
+<div class="mt-5 shared dark text-white">
+  <h1 class="mb-4">Buttons</h1>
+  <h4>Flat buttons</h4>
+  <div>
+    <app-button class="mr-3">Primario</app-button>
+    <app-button class="mr-3"><i class="fa fa-sign-in" aria-hidden="true"></i>Primario icono</app-button>
+    <app-button color="accent" class="mr-3">Secundario</app-button>
+    <app-button color="accent" class="mr-3"><i class="fa fa-sign-in" aria-hidden="true"></i>Secundario icono
+    </app-button>
+  </div>
+  <div fxLayout="row">
+    <div fxFlex="55" class="mt-3 mb-4">
+      <app-button class="mat-button__full">Full container width</app-button>
+    </div>
+  </div>
+  <h4 cl>Stroke buttons</h4>
+  <div>
+    <app-button-stroked class="mr-3">Primario</app-button-stroked>
+    <app-button-stroked class="mr-3"><i class="fa fa-sign-in" aria-hidden="true"></i>Primario icono</app-button-stroked>
+    <app-button-stroked color="accent" class="mr-3">Secundario</app-button-stroked>
+    <app-button-stroked color="accent" class="mr-3"><i class="fa fa-sign-in" aria-hidden="true"></i>Secundario icono
+    </app-button-stroked>
+  </div>
+  <div fxLayout="row">
+    <div fxFlex="55" class="mt-3 mb-4">
+      <app-button-stroked class="mat-button__full">Full container width</app-button-stroked>
+    </div>
+  </div>
+  <div class="bg-dark rounded my-4 p-3 ">
+    <h1 class="mb-4 text-white">Formulario oscuro</h1>
+    <form class="dark-form" [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
+      <app-form-field color="dark" label="Input dark" [isRequired]="true" [control]="form.controls['inputDark']">
+        <app-input formControlName="inputDark" placeholder="Introduce un texto">
+        </app-input>
+      </app-form-field>
+
+      <app-button (click)="onPatchValue()">Agregar texto</app-button>
+      <app-form-field color="dark" label="Email" [isRequired]="true" [control]="form.controls['email']"
+        [patternError]="regexErrors.email">
+        <app-input formControlName="email" placeholder="Introduce un texto">
+        </app-input>
+      </app-form-field>
+
+      <app-form-field color="dark" label="Select" [isRequired]="true" [control]="form.controls['selectDark']">
+        <app-select color="dark" formControlName="selectDark" [items]="items" placeholder="Selecciona una opcion"></app-select>
+      </app-form-field>
+
+      <app-form-field color="dark" label="Checkboxes" [isRequired]="true" [control]="form.controls['checkboxesDark']">
+        <app-checkboxes formControlName="checkboxesDark" [items]="items" placeholder="Selecciona una opcion"></app-checkboxes>
+      </app-form-field>
+
+      <app-form-field color="dark" label="Radios" [isRequired]="true" [control]="form.controls['radiosDark']">
+        <app-radios formControlName="radiosDark" [items]="items" placeholder="Selecciona una opcion"></app-radios>
+      </app-form-field>
+
+      <app-form-field color="dark" label="Date" [isRequired]="true" [control]="form.controls['dateDark']">
+        <app-date color="dark" formControlName="dateDark" ></app-date>
+      </app-form-field>
+
+      <app-form-field color="dark" label="Autocomplete" [isRequired]="true" [control]="form.controls['autocompleteDark']">
+        <app-autocomplete
+        color="dark" formControlName="autocompleteDark" [items]="items"></app-autocomplete>
+      </app-form-field>
+    </form>
+  </div>
+
+</div>

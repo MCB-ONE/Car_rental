@@ -33,7 +33,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    FlexModule
+    FlexModule,
   ],
   exports:[
       HeroComponent,

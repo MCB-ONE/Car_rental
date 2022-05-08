@@ -1,30 +1,37 @@
-@import 'variables';
+@import "variables";
 
 /* Material buttons */
-.mat-flat-button, .mat-stroked-button{
+.mat-flat-button,
+.mat-stroked-button {
+  margin-bottom: 1rem !important;
+  outline: none !important;
+
   i {
     margin-right: 8px;
-    vertical-align: -1px !important;
   }
 }
 
 /* Flat buttons*/
 .mat-flat-button.mat-primary {
+  border: 1px solid transparent;
   background-color: $yellow;
-  color: $dark-grey!important;
+  color: $dark-grey !important;
   transition: 0.5;
-  &:hover, &:focus{
-    color: $dark-grey !important;
-    border: 1px solid $dark-grey !important;
+  &:hover,
+  &:focus {
+    color: $yellow !important;
+    border: 1px solid $yellow !important;
     background-color: transparent !important;
   }
 }
 
 .mat-flat-button.mat-accent {
+  border: 1px solid transparent;
   background-color: $dark-grey;
   color: $yellow !important;
   transition: 0.5;
-  &:hover, &:focus{
+  &:hover,
+  &:focus {
     color: $yellow !important;
     border: 1px solid $yellow !important;
     background-color: transparent !important;
@@ -32,7 +39,7 @@
 }
 
 .mat-button__full {
-  button{
+  button {
     width: 100%;
   }
 }
@@ -41,9 +48,10 @@
 .mat-stroked-button.mat-primary {
   border-color: $yellow !important;
   color: $yellow !important;
-  box-shadow: inset 0px 0px 0px $yellow !important;;
-  transition: all 0.5s !important;
-  &:hover, &:focus{
+  box-shadow: inset 0px 0px 0px $yellow !important;
+  transition: all 0.8s !important;
+  &:hover,
+  &:focus {
     color: $dark-grey !important;
     box-shadow: inset 10rem 0px 0px $yellow !important;
   }
@@ -52,25 +60,28 @@
 .mat-stroked-button.mat-accent {
   border-color: $dark-grey !important;
   color: $dark-grey !important;
-  box-shadow: inset 0px 0px 0px $dark-grey !important;;
-  transition: all 0.5s !important;
-  &:hover, &:focus{
+  box-shadow: inset 0px 0px 0px $dark-grey !important;
+  transition: all 0.8s !important;
+  &:hover,
+  &:focus {
     color: $smoke-white !important;
     box-shadow: inset 10rem 0px 0px $dark-grey !important;
   }
 }
 
 .mat-button__full {
-  .mat-stroked-button.mat-primary{
-    &:hover, &:focus{
+  .mat-stroked-button.mat-primary {
+    &:hover,
+    &:focus {
       color: $dark-grey !important;
-      box-shadow: inset 38rem 0px 0px $yellow !important;
+      box-shadow: inset 10rem 0px 0px 10rem $yellow !important;
     }
   }
-  .mat-stroked-button.mat-accent{
-    &:hover, &:focus{
+  .mat-stroked-button.mat-accent {
+    &:hover,
+    &:focus {
       color: $smoke-white !important;
-      box-shadow: inset 38rem 0px 0px $dark-grey !important;
+      box-shadow: inset 10rem 0px 0px 10rem $dark-grey !important;
     }
   }
 }

@@ -45,6 +45,7 @@ a:active {
 }
 
 .navigation-items {
+  font-size: 14px;
   list-style-type: none;
   text-transform: uppercase;
   padding: 0;
@@ -52,23 +53,12 @@ a:active {
   .nav-button {
     text-transform: uppercase;
     border-color: $yellow;
-    i {
-      margin-right: 8px;
-      vertical-align: initial;
-    }
-    &:hover {
-      background-color: $black;
-      border: none;
-    }
-    &:focus {
-      background-color: $black;
-      border: none;
-    }
+    margin-bottom: 0px;
   }
 }
 
 .social {
   i {
-    font-size: 20px;
+    font-size: 16px;
   }
 }

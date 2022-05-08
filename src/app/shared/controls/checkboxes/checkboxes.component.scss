@@ -1,0 +1,72 @@
+@import "variables";
+
+.checkbox {
+  display: inline-block;
+  position: relative;
+  margin: 8px 0px;
+  padding: 0 20px 0 6px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  &__input {
+    opacity: 0;
+    cursor: pointer;
+    &:checked {
+      &~.checkbox__checkmark {
+        background-color: $yellow;
+        border: $yellow 1px solid;
+        &::after {
+          display: block;
+          left: 4px;
+          top: 0px;
+          width: 6px;
+          height: 10px;
+          border: solid $smoke-white;
+          border-width: 0 3px 3px 0;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  &__checkmark {
+    position: absolute;
+    border: $light-grey 1px solid;
+    top: 4px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    background-color: $smoke-white;
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+
+  &_disabled {
+    color: rgba(0, 0, 0, 0.38);
+  }
+
+  &:hover {
+    .checkbox__checkmark {
+      background-color: $light-yellow;
+      border: $light-yellow 1px solid;
+    }
+    .checkbox__input:checked~.checkbox__checkmark {
+      background-color: $yellow;
+      border: $yellow 1px solid;
+    }
+  }
+}
+
+:host-context(.form-field_error){
+  .checkbox__checkmark {
+    border: 1px solid $red;
+  }
+}
+
+

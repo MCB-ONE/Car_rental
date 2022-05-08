@@ -10,6 +10,7 @@ import { FormControl, Validators } from '@angular/forms';
 export class LoginFormComponent implements OnInit {
 
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+
   ngOnInit(): void {
   }
 

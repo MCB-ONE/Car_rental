@@ -1,0 +1,29 @@
+@import 'variables';
+.date{
+  input{
+    width: auto;
+  }
+  &_disabled {
+    color: rgba(0, 0, 0, 0.38);
+  }
+}
+
+
+.date.dark{
+  display: inline-flex;
+  color: $smoke-white;
+  .mat-datepicker-input{
+    color: $smoke-white;
+  }
+  .mat-icon-button{
+    color: $smoke-white;
+  }
+}
+
+
+
+:host-context(.form-field_error) {
+  input {
+    border: 1px solid $red;
+  }
+}

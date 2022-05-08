@@ -1,0 +1,20 @@
+@import 'variables';
+
+.date-range{
+  width: fit-content;
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__dash{
+    display: block;
+    padding-right: 16px;
+  }
+}
+
+:host-context(.form-field_error){
+  .input{
+    border: 1px solid $red;
+  }
+}

@@ -1,0 +1,105 @@
+@use "@angular/material" as mat;
+@use "theme.scss" as theme;
+@import "reset";
+@import "variables";
+@import "../../../node_modules/font-awesome/scss/font-awesome";
+@import "../../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "../../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+@import "./base/buttons.scss";
+@import "./base/a.scss";
+@import "./base/mat-icons.scss";
+@import "./base/typography.scss";
+@import "./base/layout.scss";
+@import "./base/input.scss";
+@import "./vendor/index.scss";
+
+// Custom material theming
+$heading-font-family: "'Montserrat', sans-serif";
+$custom-typography: mat.define-typography-config(
+  $display-4: mat.define-typography-level(112px, $font-family: $heading-font-family),
+  $display-3: mat.define-typography-level(56px, $font-family: $heading-font-family),
+  $display-2: mat.define-typography-level(45px, $font-family: $heading-font-family),
+  $display-1: mat.define-typography-level(34px, $font-family: $heading-font-family),
+  $headline: mat.define-typography-level(24px, $font-family: $heading-font-family),
+  $title: mat.define-typography-level(20px, $font-family: $heading-font-family),
+);
+
+@include mat.core($custom-typography);
+
+// Setting custom palette
+
+$custom-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: theme.$primary-palette,
+      accent: theme.$accent-palette,
+    ),
+  )
+);
+
+@include mat.all-component-themes($custom-theme);
+
+// Global styles
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+/* Backgrounds */
+.bg-dark{
+  background-color: $black !important;
+}
+
+/* Separators */
+
+.primary-separator{
+    margin: 40px 0;
+    border-top: 1px solid $yellow;
+}
+
+.dark-separator{
+  margin: 40px 0;
+  border-top: 1px solid $black;
+}
+
+.about-us {
+  background: $light-grey;
+  .app-container {
+    position: relative;
+  }
+
+  .content {
+    position: absolute;
+    z-index: 2;
+    width: 60%;
+    right: 0;
+    top: 15%;
+
+    .section-tittle {
+      margin-bottom: 15px;
+    }
+
+    .text {
+      padding: 45px;
+      background: $white;
+      border-left: 4px solid $yellow;
+    }
+  }
+
+  .image {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    height: 400px;
+    background: url("/assets/images/home-about.jpg") no-repeat;
+    background-size: cover !important;
+  }
+}
+
+app-login-form {
+  width: 100%;
+}

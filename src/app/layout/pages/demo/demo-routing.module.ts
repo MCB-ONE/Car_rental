@@ -14,6 +14,10 @@ const routes: Routes = [
       {
         path: 'shared',
         loadChildren: () => import('./pages/shared/shared.module').then(m=>m.SharedModule)
+      },
+      {
+        path: 'shared-dark',
+        loadChildren: () => import('./pages/shared-dark/shared-dark.module').then(m=>m.SharedDarkModule)
       }
     ]
   }

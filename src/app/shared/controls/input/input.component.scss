@@ -1,0 +1,9 @@
+@import 'variables';
+
+/*Fill aparence*/
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex .warn {
+  background-color: rgb(47 47 47 / 64%);
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex .warn{
+  border-bottom: 1px solid $white;
+}

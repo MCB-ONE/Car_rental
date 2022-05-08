@@ -1,0 +1,24 @@
+@import "variables";
+
+.form-field {
+  position: relative;
+  margin-bottom: 1rem;
+  label {
+    display: block;
+    margin-bottom: 0;
+  }
+  &__req {
+    color: $red;
+  }
+}
+.form-field__error {
+  position: relative;
+  top: -10px;
+  margin-bottom: 8px;
+  color: $red;
+  font-size: 12px;
+}
+
+.form-field.dark {
+    color: $smoke-white;
+}

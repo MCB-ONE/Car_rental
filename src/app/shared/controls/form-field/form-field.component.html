@@ -1,0 +1,18 @@
+<div class="form-field"  [ngClass]="color" [class.error-form]="hasError()">
+  <label>{{label}} <span *ngIf="isRequired" class="form-field__req">*</span> </label>
+  <ng-content></ng-content>
+</div>
+<div class="form-field__error" *ngIf="hasError()">
+  <ng-container *ngIf="control && errorKey" [ngSwitch]="errorKey">
+    <span *ngSwitchCase="'min'">Mínimo {{control.errors ? control.errors[errorKey].min : 0}}</span>
+    <span *ngSwitchCase="'max'">Máximo {{control.errors ? control.errors[errorKey].max : 100000}}</span>
+    <span *ngSwitchCase="'required'">Este campo es obligatorio</span>
+    <span *ngSwitchCase="'requiredTrue'">Este campo es obligatorio</span>
+    <span *ngSwitchCase="'minlength'">Cantidad de caracteres mínima {{control.errors ? control.errors[errorKey].requiredLength : 0}}</span>
+    <span *ngSwitchCase="'maxlength'">Cantidad de caracteres máxima {{control.errors ? control.errors[errorKey].requiredLength : 0}}</span>
+    <span *ngSwitchCase="'pattern'">
+        <span *ngIf="patternError">{{patternError}}</span>
+        <span *ngIf="!patternError">Expresión regular sin coincidencia</span>
+    </span>
+  </ng-container>
+</div>

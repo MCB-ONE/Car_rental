@@ -1,0 +1,44 @@
+@import 'variables';
+
+.autocomplete{
+  position: relative;
+  .app-input{
+    margin: 7px 0;
+    background: transparent;
+    padding: 4px 4px 4px 8px;
+    border: 1px solid $light-grey;
+    border-radius: 8px;
+  }
+  &__options{
+    position: absolute;
+  }
+
+  &_disabled {
+    .app-input{
+      color: rgba(0, 0, 0, 0.38);
+    }
+  }
+}
+
+.autocomplete{
+  .app-input.dark{
+    color: $smoke-white;
+  }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  &__icon{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+:host-context(.form-field_error) {
+  input {
+    border: 1px solid $red;
+  }
+}

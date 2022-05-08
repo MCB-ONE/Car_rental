@@ -1,13 +1,14 @@
-<div class="mt-5">
-  <h1 class="mb-4">Buttons</h1>
+<div class="mt-5 shared">
+  <h2 class="mb-4">Buttons</h2>
   <h4>Flat buttons</h4>
-  <div >
+  <div>
     <app-button class="mr-3">Primario</app-button>
     <app-button class="mr-3"><i class="fa fa-sign-in" aria-hidden="true"></i>Primario icono</app-button>
     <app-button color="accent" class="mr-3">Secundario</app-button>
-    <app-button color="accent" class="mr-3"><i class="fa fa-sign-in" aria-hidden="true"></i>Secundario icono</app-button>
+    <app-button color="accent" class="mr-3"><i class="fa fa-sign-in" aria-hidden="true"></i>Secundario icono
+    </app-button>
   </div>
-  <div fxLayout="row" >
+  <div fxLayout="row">
     <div fxFlex="55" class="mt-3 mb-4">
       <app-button class="mat-button__full">Full container width</app-button>
     </div>
@@ -17,11 +18,69 @@
     <app-button-stroked class="mr-3">Primario</app-button-stroked>
     <app-button-stroked class="mr-3"><i class="fa fa-sign-in" aria-hidden="true"></i>Primario icono</app-button-stroked>
     <app-button-stroked color="accent" class="mr-3">Secundario</app-button-stroked>
-    <app-button-stroked color="accent" class="mr-3"><i class="fa fa-sign-in" aria-hidden="true"></i>Secundario icono</app-button-stroked>
+    <app-button-stroked color="accent" class="mr-3"><i class="fa fa-sign-in" aria-hidden="true"></i>Secundario icono
+    </app-button-stroked>
   </div>
-  <div fxLayout="row" >
+  <div fxLayout="row">
     <div fxFlex="55" class="mt-3 mb-4">
       <app-button-stroked class="mat-button__full">Full container width</app-button-stroked>
     </div>
+  </div>
+  <hr class="primary-separator">
+
+  <h2 class="mb-4">Action Buttons</h2>
+  <app-button (click)="onToggleSpinner()" class="mr-3">Toggle Spinner</app-button>
+  <app-button (click)="onError()" class="mr-3">Error</app-button>
+  <app-button (click)="onSuccess()" class="mr-3">Success</app-button>
+
+  <hr class="primary-separator">
+
+  <h2 class="mb-4">Form</h2>
+  <div class="form-wrapper">
+    <app-spinner *ngIf="showSpinner"></app-spinner>
+  <form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
+    <app-button type="submit"  class="mr-3">Enviar</app-button>
+    <app-button (click)="onPatchValue()" class="mr-3">Agregar texto</app-button>
+    <app-button class="mr-3" (click)="onToggleDisable()">Deshabilitar</app-button>
+
+    <app-form-field label="Input light" [isRequired]="true" [control]="form.controls['input']" [patternError]="regexErrors.number">
+      <app-input formControlName="input" placeholder="Introduce un texto">
+      </app-input>
+    </app-form-field>
+
+    <app-form-field label="Email" [isRequired]="true" [control]="form.controls['email']" [patternError]="regexErrors.email">
+      <app-input formControlName="email" placeholder="Introduce tu email">
+      </app-input>
+    </app-form-field>
+
+    <app-form-field label="Password" [isRequired]="true" [control]="form.controls['password']">
+      <app-password formControlName="password"></app-password>
+    </app-form-field>
+
+    <app-form-field label="Select" [isRequired]="true" [control]="form.controls['select']">
+      <app-select formControlName="select" [items]="items" placeholder="Selecciona una opcion"></app-select>
+    </app-form-field>
+
+    <app-form-field label="Checkboxes" [isRequired]="true" [control]="form.controls['checkboxes']">
+      <app-checkboxes formControlName="checkboxes" [items]="items" placeholder="Selecciona una opcion"></app-checkboxes>
+    </app-form-field>
+
+    <app-form-field label="Radios" [isRequired]="true" [control]="form.controls['radios']">
+      <app-radios formControlName="radios" [items]="items" placeholder="Selecciona una opcion"></app-radios>
+    </app-form-field>
+
+    <app-form-field label="Date" [isRequired]="true" [control]="form.controls['date']">
+      <app-date formControlName="date" ></app-date>
+    </app-form-field>
+
+    <app-form-field label="Date Range" [isRequired]="true" [control]="form.controls['dateRange']">
+      <app-date-range formControlName="dateRange"></app-date-range>
+    </app-form-field>
+
+    <app-form-field label="Autocomplete" [isRequired]="true" [control]="form.controls['autocomplete']">
+      <app-autocomplete formControlName="autocomplete" [items]="items"></app-autocomplete>
+    </app-form-field>
+
+  </form>
   </div>
 </div>

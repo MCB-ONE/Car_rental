@@ -1,0 +1,12 @@
+@import 'variables';
+
+.mat-snackbar{
+  &_error{
+    background-color: $red !important;
+    color: $smoke-white !important;
+  }
+  &_success{
+    background-color: $yellow !important;
+    color: $black !important;
+  }
+}

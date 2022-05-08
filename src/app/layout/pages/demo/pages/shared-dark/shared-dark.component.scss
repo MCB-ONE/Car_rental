@@ -1,0 +1,12 @@
+@import 'variables';
+
+.shared.dark {
+  background-color: $black;
+  padding: 70px;
+  margin-bottom: 70px;
+  border-radius: 8px;
+  border: 2px solid $yellow;
+  form{
+    max-width: 480px;
+  }
+}
