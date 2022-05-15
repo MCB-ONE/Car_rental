@@ -1,0 +1,43 @@
+@import "variables";
+
+.not-found {
+  min-height: 100vh;
+  padding: 80px;
+  font-size: 40px;
+  font-weight: 500;
+  &_number {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $yellow;
+      height: 120px;
+      width: 100%;
+      left: 0;
+      top: 50%;
+    }
+    span {
+      position: relative;
+      z-index: 9;
+      font-size: 300px;
+    }
+  }
+  &_subtitle{
+    font-size: 22px;
+    color: $light-grey;
+  }
+  &_action {
+    border: 3px solid $black;
+    padding: 16px 32px;
+    color: #141414;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  &_bg {
+    background-image: url("/assets/images/404-bg@2x.png");
+    background-position-y: 70%;
+    background-repeat: no-repeat;
+  }
+}

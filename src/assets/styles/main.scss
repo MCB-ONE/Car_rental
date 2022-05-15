@@ -2,16 +2,13 @@
 @use "theme.scss" as theme;
 @import "reset";
 @import "variables";
+@import "base";
+@import "vendor";
+@import "layout";
 @import "../../../node_modules/font-awesome/scss/font-awesome";
 @import "../../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
 @import "../../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
-@import "./base/buttons.scss";
-@import "./base/a.scss";
-@import "./base/mat-icons.scss";
-@import "./base/typography.scss";
-@import "./base/layout.scss";
-@import "./base/input.scss";
-@import "./vendor/index.scss";
+
 
 // Custom material theming
 $heading-font-family: "'Montserrat', sans-serif";

@@ -1,64 +1,72 @@
 @import "variables";
 
-mat-sidenav-container,
-mat-sidenav-content,
-mat-sidenav {
-  height: 100%;
-}
-
-mat-sidenav {
-  width: 250px;
-}
-
-mat-toolbar {
+.mat-toolbar.mat-toolbar-single-row {
   height: 80px;
-  font-size: 16px;
-  padding: 0px 10%;
-  display: block;
+  padding: 0 60px 0 40px;
   position: fixed;
   z-index: 998;
   top: 0;
   left: 0;
   right: 0;
-  border-top: 2px solid $light-yellow;
+  border-top: 2px solid $yellow;
+  @media (max-width: 480px) {
+    padding: 0 8px;
+  }
+
   button:focus {
-    outline: none;
+    outline: none !important;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  a:hover,
+  a:active {
+    color: $yellow;
+  }
+
+  .navigation-items {
+    font-size: 14px;
+    list-style-type: none;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    .nav-button {
+      text-transform: uppercase;
+      border-color: $yellow;
+      margin-bottom: 0px !important;
+    }
+  }
+  .nav-logo {
+    @media (max-width: 601px) {
+      margin-left: auto;
+    }
+  }
+
+  .nav-social {
+    margin-left: 30px;
+    box-sizing: unset !important;
+    height: 100%;
+    background-color: $yellow;
+    border-top: 1px solid $yellow;
+    a {
+      margin: 0px 15px;
+      &:hover, &:focus{
+        color: $black;
+      }
+      i {
+        font-size: 20px;
+      }
+    }
   }
 }
 
-.transparent {
+.bg-transparent {
   background-color: transparent;
 }
 
-.dark {
+.bg-dark {
   background-color: $black;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-a:hover,
-a:active {
-  color: lightgray;
-}
-
-.navigation-items {
-  font-size: 14px;
-  list-style-type: none;
-  text-transform: uppercase;
-  padding: 0;
-  margin: 0;
-  .nav-button {
-    text-transform: uppercase;
-    border-color: $yellow;
-    margin-bottom: 0px;
-  }
-}
-
-.social {
-  i {
-    font-size: 16px;
-  }
 }

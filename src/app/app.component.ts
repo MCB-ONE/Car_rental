@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as fromRoot from './store';
+import * as fromDictionaries from './store/dictionaries';
+
 
 @Component({
   selector: 'app-root',
@@ -7,12 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 
-export class AppComponent {
-  constructor() {
+export class AppComponent implements OnInit {
+  constructor(
+    private store: Store<fromRoot.State>
+  ) { }
 
-  }
-
-  ngOnInit() {
+  ngOnInit(): void {
+    this.store.dispatch(new fromDictionaries.Read());
   }
 
 }

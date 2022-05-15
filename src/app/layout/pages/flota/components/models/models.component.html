@@ -1,0 +1,39 @@
+<ul class="cards">
+  <li class="cards__item" *ngFor="let model of models">
+    <mat-card class="mat-card">
+      <mat-card-header>
+        <img *ngIf="model.image == null" src="assets/images/default-car-img.png" alt={{model.name}}>
+        <img *ngIf="model.image !== null" src={{model.image}} alt={{model.name}}>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-card-title><span>{{model.maker.name}}</span> {{model.name}}</mat-card-title>
+        <mat-card-subtitle class="yellow-text">{{model.category.name}}</mat-card-subtitle>
+        <div class="mat-card__features">
+          <div class="item">
+            <img class="card-img-top" src="assets/images/iconos/combustible.svg"
+              alt="Incono combustible">
+            <p>{{model.fuelType}}</p>
+          </div>
+          <div class="item"><img class="card-img-top" src="assets/images/iconos/palanca-de-cambios.svg"
+              alt="Icono palanca de cambio">
+            <p>{{model.gearSystem}}</p>
+          </div>
+          <div class="item"><img class="card-img-top" src="assets/images/iconos/asiento-coche.svg"
+              alt="Iciono asiento coche">
+            <p>{{model.seatingCapacity}} asientos</p>
+          </div>
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <div class="price">
+          <p>A partir de</p>
+          <span>{{model.pricePerDay}}€</span>
+        </div>
+        <div class="action">
+          <a href="">Alquilar</a>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </li>
+</ul>

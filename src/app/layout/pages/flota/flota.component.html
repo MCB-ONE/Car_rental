@@ -1,0 +1,14 @@
+<div class="flota">
+  <div class="filter">
+    <app-filter></app-filter>
+  </div>
+  <div class="buscador">
+    <app-search></app-search>
+  </div>
+  <div class="models">
+    <app-models *ngIf="pagination$ | async as pagination" [models]="pagination['hydra:member']"></app-models>
+  </div>
+  <div class="paginator">
+    <app-paginator *ngIf="pagination$ | async as pagination" [pagination]="pagination['hydra:view']"></app-paginator>
+  </div>
+</div>

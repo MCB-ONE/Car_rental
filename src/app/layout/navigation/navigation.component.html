@@ -1,4 +1,5 @@
-<mat-toolbar [ngClass]="url1 === '/demo' ? 'dark' : 'transparent'">
+<mat-toolbar [ngClass]="url1 === '/demo' ? 'bg-dark' : 'bg-transparent'" [class.bg-dark]="nav_variable"
+  (window:scroll)="onWindowScroll($event)">
   <div fxHide.gt-xs>
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon color="primary">menu</mat-icon>
@@ -8,7 +9,7 @@
     <img src="/assets/images/logo.png" alt="Logo">
   </div>
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-    <ul fxLayout fxLayoutAlign="space-around center"  fxLayoutGap="30px" class="navigation-items">
+    <ul fxLayout fxLayoutAlign="space-around center" fxLayoutGap="30px" class="navigation-items">
       <li>
         <a routerLink="/home" routerLinkActive="active">Inicio</a>
       </li>
@@ -19,23 +20,20 @@
         <a routerLink="/contacto" routerLinkActive="active">Contacto</a>
       </li>
       <li>
-        <a routerLink="/login" ><button mat-stroked-button color="primary" class="nav-button"><i class="fa fa-sign-in" aria-hidden="true"></i>Acceder</button></a>
-      </li>
-      <li class="social">
-        <a routerLink="/flota">
-          <i class="fa fa-instagram" aria-hidden="true"></i>
-        </a>
-      </li>
-      <li class="social">
-        <a routerLink="/flota">
-          <i class="fa fa-facebook-official" aria-hidden="true"></i>
-        </a>
-      </li>
-      <li class="social">
-        <a routerLink="/flota">
-          <i class="fa fa-twitter-square" aria-hidden="true"></i>
-        </a>
+        <a routerLink="/login"><button mat-stroked-button color="primary" class="nav-button"><i class="fa fa-sign-in"
+              aria-hidden="true"></i>Acceder</button></a>
       </li>
     </ul>
+  </div>
+  <div class="nav-social" fxLayout fxLayoutAlign="space-around center" fxHide.sm fxHide.xs>
+    <a routerLink="/flota">
+      <i class="fa fa-instagram" aria-hidden="true"></i>
+    </a>
+    <a routerLink="/flota">
+      <i class="fa fa-facebook-official" aria-hidden="true"></i>
+    </a>
+    <a routerLink="/flota">
+      <i class="fa fa-twitter-square" aria-hidden="true"></i>
+    </a>
   </div>
 </mat-toolbar>

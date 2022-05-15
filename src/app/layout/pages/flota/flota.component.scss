@@ -1,0 +1,53 @@
+.flota {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: grid;
+  justify-content: stretch;
+  align-content: stretch;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas:
+    "filter buscador buscador"
+    "filter models models"
+    "filter paginator paginator";
+  div {
+    padding: 1rem;
+  }
+}
+
+.filter {
+  grid-area: filter;
+  background-color: bisque;
+}
+
+.paginator {
+  grid-area: paginator;
+  background-color: azure;
+}
+
+.buscador {
+  grid-area: buscador;
+  background-color: rgb(196, 255, 205);
+}
+
+.models {
+  grid-area: models;
+  background-color: rgb(255, 196, 229);
+}
+
+@media (max-width: 480px) {
+  .flota {
+    display: grid;
+    justify-content: stretch;
+    align-content: stretch;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-areas:
+      "buscador buscador"
+      "models models"
+      "paginator paginator";
+  }
+  .filter {
+    display: none;
+  }
+}

@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './layout/pages/home/home.component';
-import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { NavigationComponent } from './layout/navigation/navigation.component';
 import { CoreModule } from './core/core.module';
@@ -16,6 +15,11 @@ import { LoginComponent } from './layout/pages/login/login.component';
 import { RegistroComponent } from './layout/pages/registro/registro.component';
 import { MatDateFormats, MatNativeDateModule, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { NotificationModule } from './services';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { HttpClientModule } from '@angular/common/http';
+import { effects, reducers } from './store';
 
 const APP_DATE_FORMATS: MatDateFormats = {
   parse: {
@@ -34,7 +38,6 @@ const APP_DATE_FORMATS: MatDateFormats = {
   declarations: [
     AppComponent,
     HomeComponent,
-    SkeletonComponent,
     FooterComponent,
     NavigationComponent,
     SidenavListComponent,
@@ -51,7 +54,16 @@ const APP_DATE_FORMATS: MatDateFormats = {
     AngularMaterialModule,
     FlexLayoutModule,
     MatNativeDateModule,
-    NotificationModule.forRoot()
+    NotificationModule.forRoot(),
+    StoreDevtoolsModule,
+    HttpClientModule,
+    StoreModule.forRoot(reducers, {
+      runtimeChecks: {
+        strictActionImmutability: true,
+        strictStateImmutability: true
+      }
+      }),
+    EffectsModule.forRoot(effects)
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
