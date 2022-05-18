@@ -1,0 +1,10 @@
+@import 'variables';
+
+.filter{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  padding: 32px;
+  background: $smoke-white;
+  border-radius: 4px;
+}

@@ -9,6 +9,11 @@
     border: 2px solid $yellow;
   }
 }
+.mat-option {
+  .mat-icon {
+    font-size: 22px !important;
+  }
+}
 
 .select.dark {
   /* to change arrow when focused */

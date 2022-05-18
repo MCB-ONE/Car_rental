@@ -23,10 +23,16 @@ const getItems = (x: ModelItem): Array<any> => {
   return x['hydra:member'];
 }
 
+/* const formatItems = (x: object): Item => {
+  return {
+    id: x.id,
+    name: x.nombre
+  }
+} */
+
 const itemControlItem = (x: Item): ControlItem => ({
   value: x.id,
-  label: x.name,
-  icon: x.icon
+  label: x.name
 })
 
 const addDictionary = (items: Item[]): Dictionary => ({
@@ -57,10 +63,10 @@ export class DicitionariesEffects {
             map((item) => getItems(item))
           )
       ).pipe(
-        map(([categories, maker]) => {
+        map(([maker, categories]) => {
           const dictionaries: Dictionaries = {
-            categories: addDictionary(categories),
-            maker: addDictionary(maker)
+            maker: addDictionary(maker),
+            categories: addDictionary(categories)
           };
           return new fromActions.ReadSuccess(dictionaries);
         }),

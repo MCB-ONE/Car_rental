@@ -1,6 +1,6 @@
 <div class="flota">
   <div class="filter">
-    <app-filter></app-filter>
+    <app-filter *ngIf="dictionaries$ | async as dictionaries" [dictionaries]="dictionaries"></app-filter>
   </div>
   <div class="buscador">
     <app-search></app-search>

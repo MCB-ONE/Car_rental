@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SelectComponent } from './select.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -11,7 +12,8 @@ import { MatSelectModule } from '@angular/material/select';
   ],
   imports: [
     CommonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule
   ],
   exports: [
     SelectComponent

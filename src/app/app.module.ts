@@ -18,7 +18,7 @@ import { NotificationModule } from './services';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { effects, reducers } from './store';
 
 const APP_DATE_FORMATS: MatDateFormats = {
@@ -55,7 +55,6 @@ const APP_DATE_FORMATS: MatDateFormats = {
     FlexLayoutModule,
     MatNativeDateModule,
     NotificationModule.forRoot(),
-    StoreDevtoolsModule,
     HttpClientModule,
     StoreModule.forRoot(reducers, {
       runtimeChecks: {
@@ -63,6 +62,9 @@ const APP_DATE_FORMATS: MatDateFormats = {
         strictStateImmutability: true
       }
       }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 5
+    }),
     EffectsModule.forRoot(effects)
   ],
   providers: [

@@ -11,9 +11,11 @@ export class ModelsComponent implements OnInit {
   @Input() models !: Model[];
   imageUrl: string = environment.bucketUlr;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+
   }
 
 }

@@ -18,7 +18,7 @@ import { ControlItem, Value } from '@app/models/frontend';
 })
 export class SelectComponent implements OnInit, ControlValueAccessor {
 
-  @Input() items!: ControlItem[];
+  @Input() items!: ControlItem[] | any[];
   @Input() placeholder: string = '';
   @Input() color: string = '';
 

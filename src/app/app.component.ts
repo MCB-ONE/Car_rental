@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(new fromDictionaries.Read());
+    console.log(this.store)
   }
 
 }

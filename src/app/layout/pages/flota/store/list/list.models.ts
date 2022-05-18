@@ -28,7 +28,8 @@ export interface Pagination extends ApiItem{
   '@type': string;
   'hydra:member': Model[];
   'hydra:totalItems': number;
-  'hydra:view': HydraView
+  'hydra:view': HydraView;
+  "hydra:search": HydraSearch;
 }
 
 export interface Category extends ApiItem{
@@ -54,8 +55,19 @@ export interface Vehicle extends ApiItem{
 export interface HydraView extends ApiItem{
   '@id': string;
   '@type': string;
-  "hydra:first": string
-  "hydra:last": string
-  "hydra:next": string
-
+  "hydra:first": string;
+  "hydra:last": string;
+  "hydra:next": string;
 }
+
+export interface HydraSearch{
+  "hydra:mapping": hydraMapping;
+}
+
+export interface hydraMapping{
+  "variable": string;
+  "property": string;
+}
+
+
+
