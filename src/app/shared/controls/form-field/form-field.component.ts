@@ -24,6 +24,10 @@ export class FormFieldComponent implements OnInit {
   }
 
   get errorKey() {
+    /* if(this.control && this.control.errors && Object.keys(this.control.errors)){
+      console.log(Object.keys(this.control.errors)[0]);
+    } */
+
     return this.control && this.control.errors && Object.keys(this.control.errors)[0];
   }
 

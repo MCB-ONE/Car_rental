@@ -1,3 +1,2 @@
-<mat-paginator
-[length]="100" [pageSize]="10" [pageSizeOptions]="pageCombo" aria-label="Seleccionar página">
+<mat-paginator (page)="eventPaginator($event)" #matPaginator [pageSize]="pageSize" [pageSizeOptions]="pageCombo" [length]="pageCount" >
 </mat-paginator>

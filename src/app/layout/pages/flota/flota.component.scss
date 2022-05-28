@@ -4,12 +4,11 @@
   display: grid;
   justify-content: stretch;
   align-content: stretch;
-  grid-template-columns: 1fr 2fr 2fr;
-  grid-template-rows: 60px 1fr;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto auto;
   grid-template-areas:
-    "filter buscador buscador"
-    "filter models models"
-    "filter paginator paginator";
+      "filter models "
+      "filter paginator ";
   div {
     padding: 1rem;
   }

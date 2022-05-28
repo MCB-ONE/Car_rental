@@ -1,0 +1,14 @@
+.app-page{
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .verifiy-card{
+    height: fit-content;
+    max-width: 60%;
+    padding: 2.5rem 3rem;
+    .mat-card-actions {
+     margin-left: 0;
+  }
+  }
+}

@@ -1,0 +1,19 @@
+<div class="app-page">
+  <mat-card class="verifiy-card">
+    <mat-card-subtitle>Verificación de cuenta</mat-card-subtitle>
+    <mat-card-title>Gracias por registrarse.</mat-card-title>
+    <mat-card-content>
+      <p>Le hemos enviado un email de confirmación a <strong *ngIf="user$ | async as user; else loading">{{user?.email}}</strong>. Por favor compruebe su bandeja de entrada y
+        haga click en el enlace que le hemos enviado para poder activar su cuenta.</p>
+    </mat-card-content>
+    <mat-divider inset class="mt-4"></mat-divider>
+    <mat-card-actions >
+      <p>Haga click en el siguiente botón para que le reenviemos de nuevo el email de confirmación.</p>
+      <app-button *ngIf="user$ | async as user; else loading" (click)="onSendEmail(user.email)">Reenviar Mensaje</app-button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+<ng-template #loading>
+  Loading...
+</ng-template>

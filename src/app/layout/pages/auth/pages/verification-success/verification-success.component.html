@@ -1,0 +1,33 @@
+<div class="app-page">
+  <mat-card *ngIf="accountActivated; else templateName" class="verifiy-card">
+    <mat-card-subtitle>Verificación de cuenta</mat-card-subtitle>
+    <mat-card-title>Su cuenta ha sido activada con exito.</mat-card-title>
+    <mat-card-content>
+      <p>Ya puede acceder al área de clientes y gestionar sus reservas.</p>
+      <a routerLink="auth">
+        <app-button><i class="fa fa-sign-in" aria-hidden="true"></i>Acceder</app-button>
+      </a>
+    </mat-card-content>
+    <ng-template #templateName>
+      <mat-card-content>
+        <p>Ya puede acceder al área de clientes y gestionar sus reservas.</p>
+        <a routerLink="auth">
+          <app-button><i class="fa fa-sign-in" aria-hidden="true"></i>Acceder</app-button>
+        </a>
+      </mat-card-content>
+    </ng-template>
+  </mat-card>
+
+  <ng-template #templateName>
+    <mat-card class="verifiy-card">
+      <mat-card-subtitle>Verificación de cuenta</mat-card-subtitle>
+      <mat-card-title>Su cuenta no se ha podido acitivar.</mat-card-title>
+      <mat-card-content>
+        <p>{{message}}.</p>
+        <a routerLink="auth">
+          <app-button><i class="fa fa-sign-in" aria-hidden="true"></i>Acceder</app-button>
+        </a>
+      </mat-card-content>
+    </mat-card>
+  </ng-template>
+</div>

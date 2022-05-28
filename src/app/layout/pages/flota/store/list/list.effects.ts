@@ -25,7 +25,7 @@ export class ListEffects {
         this.httpClient.get<Pagination>(`${environment.url}models?${request}`)
           .pipe(
             delay(1000),
-            map((pagination: any) => new fromActions.ReadSuccess(pagination)),
+            map((pagination: any) => new fromActions.ReadSuccess(pagination), console.log(`${environment.url}models?${request}`)),
             catchError(err => of(new fromActions.ReadError(err.message)))
           )
       )

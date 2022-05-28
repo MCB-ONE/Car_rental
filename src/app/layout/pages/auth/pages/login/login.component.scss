@@ -1,0 +1,41 @@
+@import "variables";
+
+.app-login {
+  /* background-color: $black; */
+  .section-subtittle {
+    margin-bottom: 24px;
+    color: $smoke-white;
+    font-size: 20px;
+  }
+  .form-wrapper {
+    position: relative;
+    min-width: 360px;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 80px 0;
+    @media screen and (max-width: 420px) {
+      width: 95%;
+    }
+
+    &__links {
+      font-size: 14px;
+      display: flex;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a {
+        color: $yellow;
+        font-weight: 700;
+      }
+    }
+  }
+  .bg-half {
+    height: 35vh;
+    padding: 0px 40px 3rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    background: linear-gradient(rgba(4, 4, 11, 0.55), rgba(4, 4, 11, 0.55)),
+      url("/assets/images/registration-bg.jpg") no-repeat center 20%;
+  }
+}

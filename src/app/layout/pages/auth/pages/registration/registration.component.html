@@ -1,0 +1,34 @@
+<div class="app-page app-registration">
+  <div class="bg-half">
+    <h1 class="section-tittle">Registro de clientes</h1>
+    <p class="section-subtittle">Rellena el formulario para acceder al área de clientes y gestionar tus reservas. </p>
+  </div>
+  <div class="form-wrapper text-grey">
+    <h2 class="text-yellow text-uppercase mb-4">Formulario de registro</h2>
+    <form  [formGroup]="form" (submit)="onSubmit()" (keyup.enter)="onSubmit()" novalidate autocomplete="off">
+      <app-form-field  label="Email" [isRequired]="true" [control]="form.controls['email']"
+        [patternError]="regexErrors.email">
+        <app-input formControlName="email"></app-input>
+      </app-form-field>
+      <app-form-field label="Username" [isRequired]="true" [control]="form.controls['name']">
+        <app-input formControlName="name"></app-input>
+      </app-form-field>
+      <app-form-field label="Password" [isRequired]="true" [control]="form.controls['password']" [patternError]="regexErrors.password">
+        <app-password formControlName="password" ></app-password>
+      </app-form-field>
+      <app-form-field label="Repetir Password" [isRequired]="true" [control]="form.controls['passwordRepeat']" [patternError]="regexErrors.password">
+        <app-password formControlName="passwordRepeat"></app-password>
+      </app-form-field>
+      <div class="error mb-3" [class.error_active]="form.hasError('repeat')">
+        El password no coincide
+      </div>
+      <!-- <div class="error" ></div> -->
+      <app-button type="submit" class="mb-2 mat-button__full">Enviar</app-button>
+      <div class="form-wrapper__links text-center">
+        <p>Si ya tienes una cuenta haz click <a routerLink="/auth/login">aquí</a></p>
+      </div>
+    </form>
+    <app-spinner *ngIf="loading$ | async" ></app-spinner>
+    <!-- <app-dialog></app-dialog> -->
+  </div>
+</div>

@@ -1,9 +1,9 @@
 @import "variables";
 
 .app-page {
-  min-height: 100%;
+  padding-top: 80px;
+  min-height: calc(100vh - 80px);
   background: $smoke-white;
-  position: relative;
 
   &__container {
     width: 80%;

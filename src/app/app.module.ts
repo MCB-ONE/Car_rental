@@ -11,8 +11,6 @@ import { NavigationComponent } from './layout/navigation/navigation.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { SidenavListComponent } from './layout/navigation/sidenav-list/sidenav-list.component';
-import { LoginComponent } from './layout/pages/login/login.component';
-import { RegistroComponent } from './layout/pages/registro/registro.component';
 import { MatDateFormats, MatNativeDateModule, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { NotificationModule } from './services';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -20,6 +18,8 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { effects, reducers } from './store';
+import { AuthInterceptor } from './auth-interceptor';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 const APP_DATE_FORMATS: MatDateFormats = {
   parse: {
@@ -41,8 +41,6 @@ const APP_DATE_FORMATS: MatDateFormats = {
     FooterComponent,
     NavigationComponent,
     SidenavListComponent,
-    LoginComponent,
-    RegistroComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,8 +66,11 @@ const APP_DATE_FORMATS: MatDateFormats = {
     EffectsModule.forRoot(effects)
   ],
   providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    {provide: JWT_OPTIONS, useValue: JWT_OPTIONS }, JwtHelperService,
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
-    {provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS}
+    {provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS},
+
   ],
   bootstrap: [AppComponent]
 })

@@ -33,6 +33,10 @@
     text-transform: uppercase;
     padding: 0;
     margin: 0;
+    .nav-item_active{
+      font-weight: 500;
+      color: $yellow;
+    }
     .nav-button {
       text-transform: uppercase;
       border-color: $yellow;

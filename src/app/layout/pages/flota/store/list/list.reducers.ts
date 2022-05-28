@@ -25,6 +25,7 @@ export function reducer(state: ListState = initialSatate, action: fromActions.Al
       return { ...state, loading: true, error: null, requestPagination: action.paginationRequest };
     }
     case fromActions.Types.READ_SUCCESS: {
+      console.log(state);
       return { ...state, loading: false, error: null, pagination: action.pagination };
     }
     case fromActions.Types.READ_ERROR: {

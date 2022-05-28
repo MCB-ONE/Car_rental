@@ -2,13 +2,13 @@
   <div class="filter">
     <app-filter *ngIf="dictionaries$ | async as dictionaries" [dictionaries]="dictionaries"></app-filter>
   </div>
-  <div class="buscador">
+<!--   <div class="buscador">
     <app-search></app-search>
-  </div>
+  </div> -->
   <div class="models">
     <app-models *ngIf="pagination$ | async as pagination" [models]="pagination['hydra:member']"></app-models>
   </div>
   <div class="paginator">
-    <app-paginator *ngIf="pagination$ | async as pagination" [pagination]="pagination['hydra:view']"></app-paginator>
+    <app-paginator *ngIf="pagination$ | async as pagination" [pagination]="pagination"></app-paginator>
   </div>
 </div>

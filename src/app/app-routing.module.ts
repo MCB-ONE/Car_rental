@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DemoComponent } from './layout/pages/demo/demo.component';
 import { HomeComponent } from './layout/pages/home/home.component';
-import { LoginComponent } from './layout/pages/login/login.component';
 
 const routes: Routes = [
   {
     path: "",
     children: [
+      {
+        path: 'auth',
+        loadChildren: () => import('./layout/pages/auth/auth.module').then(m => m.AuthModule)
+      },
       {
         path: 'flota',
         loadChildren: () => import('./layout/pages/flota/flota.module').then(m => m.FlotaModule)
@@ -37,7 +40,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 

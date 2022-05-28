@@ -19,10 +19,15 @@ export interface Model extends ApiItem {
 }
 
 export interface PaginationRequest {
-  page: number;
+  page: number | null;
+  totalItems: number | null;
+  itemsPerPage: number | null;
+  order: string | null;
+  maker: string | null;
+  category: string | null;
 }
 
-export interface Pagination extends ApiItem{
+export interface Pagination extends ApiItem {
   '@context': string;
   '@id': string;
   '@type': string;
@@ -32,19 +37,19 @@ export interface Pagination extends ApiItem{
   "hydra:search": HydraSearch;
 }
 
-export interface Category extends ApiItem{
+export interface Category extends ApiItem {
   '@id': string;
   '@type': string;
   name: string;
 }
 
-export interface Maker extends ApiItem{
+export interface Maker extends ApiItem {
   '@id': string;
   '@type': string;
   name: string;
 }
 
-export interface Vehicle extends ApiItem{
+export interface Vehicle extends ApiItem {
   '@id': string;
   '@type': string;
   name: string;
@@ -52,7 +57,7 @@ export interface Vehicle extends ApiItem{
   plateNumber: string;
 }
 
-export interface HydraView extends ApiItem{
+export interface HydraView extends ApiItem {
   '@id': string;
   '@type': string;
   "hydra:first": string;
@@ -60,11 +65,11 @@ export interface HydraView extends ApiItem{
   "hydra:next": string;
 }
 
-export interface HydraSearch{
+export interface HydraSearch {
   "hydra:mapping": hydraMapping;
 }
 
-export interface hydraMapping{
+export interface hydraMapping {
   "variable": string;
   "property": string;
 }
