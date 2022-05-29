@@ -57,12 +57,12 @@ export class UserEffects {
           .pipe(
             tap((response: UserResponse) => {
               const tokenData = this.jwt_decode.decodeToken(response.token);
+              console.log(tokenData)
               const localUserData = { 'token': response.token, 'id': tokenData.id }
               localStorage.setItem('user', JSON.stringify(localUserData));
-
+              this.router.navigate(['/']);
             }),
-            map((response: UserResponse) => new fromActions.SignInEmailSuccess(response.id, response || null)),
-            //catchError(err => of(new fromActions.SignInEmailError(err.message)))
+            map((response: UserResponse) => new fromActions.SignInEmailSuccess(response.id)),
             catchError(err => {
               this.notification.error("Credenciales incorrectas");
               return of(new fromActions.SignInEmailError(err.message))
@@ -79,10 +79,10 @@ export class UserEffects {
       switchMap(user => {
         if (user) {
           console.log(JSON.parse(user));
-          return this.httpClient.get<UserResponse>(`${environment.url}/users/${JSON.parse(user).id}`)
+          return this.httpClient.get<UserResponse>(`${environment.url}users/${JSON.parse(user).id}`)
             .pipe(
               tap((user: UserResponse) => {
-                console.log('data del usuario en sesion que viene del servidor=>', user);
+                console.log('Data del usuario en sesion que viene del servidor=>', user);
               }),
               map((user: UserResponse) => new fromActions.InitAuthorized(user.id, user || null)),
               catchError(err => of(new fromActions.InitError(err.message)))

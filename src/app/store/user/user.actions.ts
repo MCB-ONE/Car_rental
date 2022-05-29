@@ -1,5 +1,5 @@
 import { Action } from "@ngrx/store";
-import { EmailPasswordCredentials, UserCreateRequest, UserResponse } from "./user.models";
+import { EmailPasswordCredentials, UserCreateRequest, UserInfoCredentials, UserResponse } from "./user.models";
 
 
 export enum Types {
@@ -13,6 +13,10 @@ export enum Types {
   SIGN_IN_EMAIL_SUCCESS = '[User] Login: Success',
   SIGN_IN_EMAIL_ERROR = '[User] Login: Error',
 
+/*   GET_USER_INFO = '[User] Get Info: Start',
+  GET_USER_INFO_SUCCESS = '[User] Get Info: Success',
+  GET_USER_INFO_ERROR = '[User] Get Info: Error', */
+
   SIGN_UP_EMAIL = '[User] Sign up con email: Start',
   SIGN_UP_EMAIL_SUCCESS = '[User] Sign up con email: Success',
   SIGN_UP_EMAIL_ERROR = '[User] Sign up con email: Error',
@@ -25,7 +29,6 @@ export enum Types {
 
 //Type Actions
 // INIT
-
 export class Init implements Action {
   readonly type = Types.INIT;
   constructor(){};
@@ -47,7 +50,6 @@ export class InitError implements Action {
 }
 
 // SIGNIN
-
 export class SignInEmail implements Action {
   readonly type = Types.SIGN_IN_EMAIL;
   constructor(public credentials: EmailPasswordCredentials){};
@@ -55,7 +57,7 @@ export class SignInEmail implements Action {
 
 export class SignInEmailSuccess implements Action {
   readonly type = Types.SIGN_IN_EMAIL_SUCCESS;
-  constructor(public id: string, public user: UserResponse | null){};
+  constructor(public id: string){};
 }
 
 export class SignInEmailError implements Action {
@@ -63,8 +65,24 @@ export class SignInEmailError implements Action {
   constructor(public error: string){};
 }
 
-// SIGNUP
+//GET USER INFO
+/* export class GetUserInfo implements Action {
+  readonly type = Types.GET_USER_INFO;
+  constructor(public infoCredentials: UserInfoCredentials){};
+}
 
+export class GetUserInfoSuccess implements Action {
+  readonly type = Types.GET_USER_INFO_SUCCESS;
+  constructor(public id: string, public user: UserResponse | null){};
+}
+
+export class GetUserInfoError implements Action {
+  readonly type = Types.GET_USER_INFO_ERROR;
+  constructor(public error: string){};
+}
+ */
+
+// SIGNUP
 export class SignUpEmail implements Action {
   readonly type = Types.SIGN_UP_EMAIL;
   constructor(public user: UserCreateRequest){};
@@ -108,6 +126,9 @@ export type All =
   | SignUpEmail
   | SignUpEmailSuccess
   | SignUpEmailError
+/*   | GetUserInfo
+  | GetUserInfoSuccess
+  | GetUserInfoError */
   | Logout
   | LogoutSuccess
   | LogoutError

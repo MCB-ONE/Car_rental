@@ -1,8 +1,13 @@
 import { User } from '@app/models/backend/user';
 export { User as UserResponse } from '@app/models/backend/user';
 
+export interface UserInfoCredentials {
+  id: string;
+  token: string;
+}
+
 export interface EmailPasswordCredentials {
-  username: string; //Referencia al email
+  username: string; //Referencia al email en la api
   password: string;
 }
 

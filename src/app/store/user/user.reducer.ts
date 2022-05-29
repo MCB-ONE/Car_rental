@@ -34,13 +34,12 @@ export function reducer(state: UserState = initialSatate, action: fromActions.Al
     }
 
     //Login
-
     case fromActions.Types.SIGN_IN_EMAIL: {
       return { ...state, loading: true, error: null, entity: null, id: null };
     }
 
     case fromActions.Types.SIGN_IN_EMAIL_SUCCESS: {
-      return { ...state, loading: false, error: null, entity: action.user, id: action.id };
+      return { ...state, loading: false, error: null, id: action.id };
     }
 
     case fromActions.Types.SIGN_IN_EMAIL_ERROR: {

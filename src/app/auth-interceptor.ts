@@ -14,7 +14,7 @@ export class AuthInterceptor implements HttpInterceptor {
     if (userStoreData) {
       const securityToken = JSON.parse(userStoreData).token;
       request = req.clone({
-        headers: req.headers.set('Authorization', 'Bearer' + securityToken)
+        headers: req.headers.set('Authorization', `Bearer ${ securityToken }`)
       })
     } else {
       console.log('Error en el interceptor')

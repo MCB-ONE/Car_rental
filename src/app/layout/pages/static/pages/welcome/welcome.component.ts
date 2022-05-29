@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-/* import { HttpClient } from '@angular/common/http';
-import { environment } from '@src/environments/environment'; */
+import { Store } from '@ngrx/store';
+import * as fromUser from '@app/store/user';
 
 @Component({
   selector: 'app-welcome',
@@ -10,30 +10,10 @@ import { environment } from '@src/environments/environment'; */
 export class WelcomeComponent implements OnInit {
   products!: any[];
 
-  constructor(/* private http:HttpClient */) { }
+  constructor(private store: Store<fromUser.UserState>) { }
 
   ngOnInit(): void {
-
-    // this.http.get(`${environment.url}/api/Producto?pageIndex=1&pageSize=5`).subscribe((response: any) => {
-    //   this.products = response.data;
-    // }, error => {
-    //   console.log(error);
-    // })
-
-
-/*     this.http.get(`${environment.url}/api/Producto?pageIndex=1&pageSize=10`).subscribe({
-      next: (response:any) => {
-        this.products = response.data;
-      },
-      error: (err:any) => {
-        console.log(err);
-      },
-      complete: () => {
-        console.log('completado');
-      }
-    }) */
-
-
+    this.store.dispatch(new fromUser.Init);
   }
 
 }

@@ -51,7 +51,6 @@ export class LoginComponent implements OnInit {
         username: value.username,
         password: value.password
       }
-      console.log(credentials);
       this.store.dispatch(new fromUser.SignInEmail(credentials));
     }
     else {

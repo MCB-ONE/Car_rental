@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.user$ = this.store.pipe(select(fromUser.getUser)) as Observable<fromUser.UserResponse>;
+
     this.store.dispatch(new fromDictionaries.Read());
   }
 
