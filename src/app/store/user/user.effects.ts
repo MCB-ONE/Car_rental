@@ -57,7 +57,6 @@ export class UserEffects {
           .pipe(
             tap((response: UserResponse) => {
               const tokenData = this.jwt_decode.decodeToken(response.token);
-              console.log(tokenData)
               const localUserData = { 'token': response.token, 'id': tokenData.id }
               localStorage.setItem('user', JSON.stringify(localUserData));
               this.router.navigate(['/']);
@@ -78,7 +77,6 @@ export class UserEffects {
       switchMap(async () => localStorage.getItem('user')),
       switchMap(user => {
         if (user) {
-          console.log(JSON.parse(user));
           return this.httpClient.get<UserResponse>(`${environment.url}users/${JSON.parse(user).id}`)
             .pipe(
               tap((user: UserResponse) => {

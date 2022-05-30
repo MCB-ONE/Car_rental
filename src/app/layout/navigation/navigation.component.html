@@ -1,5 +1,4 @@
-<mat-toolbar [ngClass]="url1 === '/demo' ? 'bg-dark' : 'bg-transparent'" [class.bg-dark]="nav_variable"
-  (window:scroll)="onWindowScroll($event)">
+<mat-toolbar class="bg-dark">
   <div fxHide.gt-xs>
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon color="primary">menu</mat-icon>
@@ -8,7 +7,7 @@
   <div class="nav-logo">
     <img src="/assets/images/logo.png" alt="Logo">
   </div>
-  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+  <div fxFlex  fxLayout fxLayoutAlign="center" fxHide.xs>
     <ul fxLayout fxLayoutAlign="space-around center" fxLayoutGap="30px" class="navigation-items">
       <li>
         <a routerLink="/" routerLinkActive="nav-item_active">Inicio</a>
@@ -18,9 +17,6 @@
       </li>
       <li>
         <a routerLink="demo" routerLinkActive="nav-item_active">Contacto</a>
-      </li>
-      <li>
-        <a routerLink="auth"><button mat-stroked-button color="primary" class="nav-button"><i class="fa-solid fa-arrow-right-to-bracket"></i>Acceder</button></a>
       </li>
     </ul>
   </div>
@@ -34,5 +30,20 @@
     <a routerLink="/flota">
       <i class="fa fa-twitter-square" aria-hidden="true"></i>
     </a>
+  </div>
+  <a class="ml-5" *ngIf="!isAuth" routerLink="auth"  fxHide.xs>
+    <button mat-stroked-button color="primary" class="nav-button">
+    <i class="fa-solid fa-arrow-right-to-bracket"></i>Acceder</button>
+  </a>
+  <div class="nav-profile ml-5" *ngIf="isAuth" fxHide.xs>
+    <img src="/assets/images/default-profile-img.png" alt="Profile image">
+    <p>{{user?.name}}
+      <i class="fa-solid fa-circle-chevron-down" [matMenuTriggerFor]="menu"></i>
+    </p>
+    <mat-menu class="nav-profile__submenu" #menu="matMenu">
+      <button mat-menu-item><i class="fa-solid fa-user"></i>Mi perfil</button>
+      <button mat-menu-item><i class="fa-solid fa-calendar-check"></i>Mis reservas</button>
+      <button mat-menu-item (click)="OnLogout()"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar sessión</button>
+    </mat-menu>
   </div>
 </mat-toolbar>

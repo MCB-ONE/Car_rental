@@ -1,9 +1,11 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav role="navigation">
-    <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
+    <app-sidenav-list (sidenavClose)="sidenav.close()" (logout)="onLogout()" [isAuth]="isAuth$ | async"
+    [user]="user$ | async"></app-sidenav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <app-navigation (sidenavToggle)="sidenav.toggle()"></app-navigation>
+    <app-navigation (logout)="onLogout()" (sidenavToggle)="sidenav.toggle()" [isAuth]="isAuth$ | async"
+    [user]="user$ | async"></app-navigation>
     <main>
       <router-outlet></router-outlet>
     </main>

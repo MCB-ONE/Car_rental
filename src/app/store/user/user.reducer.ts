@@ -22,7 +22,6 @@ export function reducer(state: UserState = initialSatate, action: fromActions.Al
       return { ...state, loading: true };
     }
     case fromActions.Types.INIT_AUTHORIZED: {
-      console.log(state);
       return { ...state, loading: false, error: null, entity: action.user, id: action.id };
     }
     case fromActions.Types.INIT_UNAUTHORIZED: {

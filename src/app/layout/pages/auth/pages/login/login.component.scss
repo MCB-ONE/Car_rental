@@ -7,35 +7,72 @@
     color: $smoke-white;
     font-size: 20px;
   }
-  .form-wrapper {
+  section{
     position: relative;
-    min-width: 360px;
-    max-width: 480px;
-    margin: 0 auto;
-    padding: 80px 0;
+    min-height: 100vh;
+  }
+  .form-wrapper {
+    position: absolute;
+    display: flex;
+    top: -10%;
+    left: 10%;
+    border-radius: 4px;
+    background: #efefee;
+    box-shadow: #0000001f 0px 3px 11px 6px;
+    width: 80%;
+    padding: 1rem;
     @media screen and (max-width: 420px) {
       width: 95%;
+      app-button {
+        margin-bottom: 4px !important;
+      }
     }
-
+    &__bg{
+      width: 30%;
+      background-color: $yellow;
+      img{
+        width: 145%;
+        margin-top: 50%;
+        filter: saturate(0.7);
+        transform:scaleX(-1);
+      }
+    }
+    form{
+      width: 70%;
+      padding: 40px 40px 40px 210px;
+    }
     &__links {
       font-size: 14px;
-      display: flex;
       display: flex;
       justify-content: space-between;
       align-items: center;
       a {
         color: $yellow;
         font-weight: 700;
+        &:hover {
+          color: $black;
+        }
+      }
+      @media screen and (max-width: 420px) {
+        flex-direction: column-reverse;
+        a {
+          margin-bottom: 1rem;
+        }
       }
     }
   }
   .bg-half {
-    height: 35vh;
-    padding: 0px 40px 3rem;
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-end;
+    height: 50vh;
+    padding-top: 80px;
     background: linear-gradient(rgba(4, 4, 11, 0.55), rgba(4, 4, 11, 0.55)),
       url("/assets/images/registration-bg.jpg") no-repeat center 20%;
+    &__text{
+      max-width: 50%;
+      margin: 0 auto;
+      .section-subtittle{
+        font-size: 16px;
+      }
+    }
+
   }
 }

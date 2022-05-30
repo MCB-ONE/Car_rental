@@ -1,5 +1,5 @@
-import { Location } from '@angular/common';
-import { Component, EventEmitter, HostListener, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { UserResponse } from '@app/store/user';
 
 @Component({
   selector: 'app-navigation',
@@ -10,18 +10,17 @@ import { Component, EventEmitter, HostListener, OnInit, Output, ViewEncapsulatio
 })
 export class NavigationComponent implements OnInit {
 
-  nav_variable = true;
+  @Input() isAuth !: boolean | null;
+  @Input() user !: UserResponse | null;
+  @Output() public sidenavToggle = new EventEmitter<void>();
+  @Output() public logout = new EventEmitter<void>();
 
-  @Output() public sidenavToggle = new EventEmitter();
-
-  public url1: string = "";
-
-  constructor(private location: Location) {
+  constructor() {
 
   }
 
   ngOnInit() {
-    this.url1 = this.location.path();
+
   }
 
   public onToggleSidenav = () => {
@@ -31,4 +30,10 @@ export class NavigationComponent implements OnInit {
   public onWindowScroll(event: Event){
     console.log(event);
   }
+
+  OnLogout():void {
+    this.logout.emit();
+  }
+
+
 }

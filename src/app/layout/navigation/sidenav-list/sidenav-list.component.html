@@ -8,8 +8,11 @@
   <a mat-list-item routerLink="/demo" (click)="onSidenavClose()">
     <mat-icon>account_balance</mat-icon><span class="nav-caption">Contacto</span>
   </a>
-  <a mat-list-item routerLink="/auth/login">
+  <a *ngIf="!isAuth" mat-list-item routerLink="/auth/login" (click)="onSidenavClose()">
     <button mat-flat-button color="primary" class="nav-button"><i class="fa fa-sign-in"
-        aria-hidden="true"></i>Acceder</button>
+        aria-hidden="true" ></i>Acceder</button>
+  </a>
+  <a *ngIf="isAuth" mat-list-item (click)="OnLogout()">
+    <button mat-flat-button color="primary" class="nav-button"><i class="fa-solid fa-arrow-right-from-bracket"  ></i>Cerrar sessión</button>
   </a>
 </mat-nav-list>

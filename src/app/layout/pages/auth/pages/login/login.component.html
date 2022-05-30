@@ -1,26 +1,37 @@
 <div class="app-page app-login">
-<!--   <div class="bg-half">
-    <h1 class="section-tittle">Accede al área de clientes</h1>
-    <p class="section-subtittle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis voluptas aspernatur voluptate praesentium dolore. </p>
-  </div> -->
-  <div class="form-wrapper text-grey">
-    <h2 class="text-yellow text-uppercase mb-4">Formulario de acceso</h2>
-    <form  [formGroup]="form" (submit)="onSubmit()" (keyup.enter)="onSubmit()" novalidate autocomplete="off">
-      <app-form-field label="Email" [isRequired]="true" [control]="form.controls['username']">
-        <app-input formControlName="username"></app-input>
-      </app-form-field>
-      <app-form-field label="Password" [isRequired]="true" [control]="form.controls['password']" [patternError]="regexErrors.password">
-        <app-password formControlName="password" ></app-password>
-      </app-form-field>
-      <!-- <div class="error" ></div> -->
-      <app-button type="submit" class="mb-3 mat-button__full"><i class="fa-solid fa-arrow-right-to-bracket"></i>ACCEDER</app-button>
-      <div class="form-wrapper__links">
-        <a routerLink="/auth/register">
-          <app-button-stroked ><i class="fa-regular fa-pen-to-square"></i>CREAR CUENTA</app-button-stroked></a>
-        <a >¿Has olvidado tu contraseña?</a>
-      </div>
-    </form>
-    <app-spinner *ngIf="loading$ | async" ></app-spinner>
-    <!-- <app-dialog></app-dialog> -->
+  <div class="bg-half">
+    <div class="bg-half__text text-center">
+      <h1 class="section-tittle">FAST CARS<br>Accede al área de clientes</h1>
+      <p class="section-subtittle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis voluptas
+        aspernatur voluptate praesentium dolore. </p>
+    </div>
   </div>
+  <section>
+    <div class="form-wrapper text-grey">
+      <div class="form-wrapper__bg">
+        <img src="/assets/images/login-bg.png" alt="">
+      </div>
+      <form [formGroup]="form" (submit)="onSubmit()" (keyup.enter)="onSubmit()" novalidate autocomplete="off">
+        <h2 class="mb-4">Formulario de acceso</h2>
+        <app-form-field label="Email" [isRequired]="true" [control]="form.controls['username']">
+          <app-input formControlName="username"></app-input>
+        </app-form-field>
+        <app-form-field label="Password" [isRequired]="true" [control]="form.controls['password']"
+          [patternError]="regexErrors.password">
+          <app-password formControlName="password"></app-password>
+        </app-form-field>
+        <!-- <div class="error" ></div> -->
+        <app-button type="submit" class="mb-3 mat-button__full"><i class="fa-solid fa-arrow-right-to-bracket"></i>ACCEDER
+        </app-button>
+        <div class="form-wrapper__links">
+          <a routerLink="/auth/register">
+            <app-button><i class="fa-regular fa-pen-to-square"></i>CREAR CUENTA</app-button>
+          </a>
+          <a>¿Has olvidado tu contraseña?</a>
+        </div>
+      </form>
+      <app-spinner *ngIf="loading$ | async"></app-spinner>
+      <!-- <app-dialog></app-dialog> -->
+    </div>
+  </section>
 </div>
